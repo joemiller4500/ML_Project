@@ -7030,6 +7030,9 @@ button.bg-dark:focus {
 .text-white {
   color: #fff !important; }
 
+.text-red {
+  color: rgb(231, 16, 16) !important; }
+
 .text-primary {
   color: #5e6476 !important; }
 
@@ -7037,7 +7040,7 @@ a.text-primary:hover, a.text-primary:focus {
   color: #3c404b !important; }
 
 .text-secondary {
-  color: #994642 !important; }
+  color: #1de60a !important; }
 
 a.text-secondary:hover, a.text-secondary:focus {
   color: #642e2b !important; }
