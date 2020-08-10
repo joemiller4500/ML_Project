@@ -67,7 +67,7 @@ hr {
   overflow: visible; }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 0.5rem; }
 
 p {
@@ -7030,6 +7030,9 @@ button.bg-dark:focus {
 .text-white {
   color: #fff !important; }
 
+.text-yellow {
+  color: #cfa31e !important; }
+
 .text-red {
   color: rgb(231, 16, 16) !important; }
 
@@ -7419,3 +7422,12 @@ form .row:first-child .floating-label-form-group {
 
 .btn-social {
   margin-bottom: 0.5rem; }
+
+.title-space {
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.head-space {
+  padding-bottom: 6rem;
+}
