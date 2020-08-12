@@ -11,10 +11,10 @@
         <!-- Boot Strap -->
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet">
+        <link href="../static/css/styles.css" rel="stylesheet">
         <!-- Fonts CSS-->
-        <link rel="stylesheet" href="css/heading.css">
-        <link rel="stylesheet" href="css/body.css">
+        <link rel="stylesheet" href="../static/css/heading.css">
+        <link rel="stylesheet" href="../static/css/body.css">
     </head>
     <body id="page-top">
         <!-- bg-seconary = navbar color -->
@@ -37,7 +37,7 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src=".\assets\img\stockmarket.jpg" alt="Stock Pic">
+                <img class="masthead-avatar mb-5" src="..\static\assets\img\stockmarket.jpg" alt="Stock Pic">
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading mb-0 head-space">Predictive Analysis of Stock Market Trends</h1>
                 <!-- Masthead Subheading-->
@@ -52,9 +52,9 @@
                     <h2 class="head-space page-section-heading d-inline-block text-red">About</h2>
                 </div>
                 <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-8 ml-auto form-check-inline">
-                        <img width="400" class="" src=".\assets\img\bull-bear.jpg" alt="Bull-Bear">
+                <div class="row justify-content-center">
+                    <div class="d-flex flex-column aligh-self-center d-inline-block">
+                        <img width="400" class="" src="..\static\assets\img\bull-bear.jpg" alt="Bull-Bear">
                     </div>
                 </div>
                 <div class="row">
@@ -68,10 +68,16 @@
                 </div>
                 <div class="row">
                     <div class="col align-self-center col-md-auto">
-                        <img width="200" class="" src=".\assets\img\python-logo.png" alt="python">
-                        <img width="200" class="" src=".\assets\img\html-logo.png" alt="html">
-                        <img width="150" class="" src=".\assets\img\css-logo.png" alt="css">
-                        <img width="215" class="" src=".\assets\img\javascript-logo.png" alt="javascript">
+                        <img width="200" class="" src="..\static\assets\img\html-logo.png" alt="html">
+                        <img width="150" class="" src="..\static\assets\img\css-logo.png" alt="css">
+                        <img width="215" class="" src="..\static\assets\img\javascript-logo.png" alt="javascript">
+                        <img width="150" class="" src="..\static\assets\img\bootstrap.png" alt="bootstrap">
+                        <img width="215" class="" src="..\static\assets\img\api.png" alt="api">
+                        <img width="200" class="" src="..\static\assets\img\python-logo.png" alt="python">
+                        <img width="220" class="" src="..\static\assets\img\matplotlib.png" alt="matplotlib">
+                        <img width="220" class="" src="..\static\assets\img\pandas.png" alt="pandas">
+                        <img width="220" class="" src="..\static\assets\img\ml.png" alt="machine-learning">
+                        
                     </div>
                     <div class="col align-self-center col-md-auto">
                         
@@ -99,21 +105,21 @@
                             <div class="visuals-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="visuals-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src=".\assets\img\bar.jpg" alt="Bar Graph"/>
+                            <img class="img-fluid" src="..\static\assets\img\bar.jpg" alt="Bar Graph"/>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 mb-5">
                         <div class="visuals-item mx-auto" data-toggle="modal" data-target="#visual2">
                             <div class="visuals-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="visuals-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src=".\assets\img\candlestick.jpeg" alt="Candlestick"/>
+                            </div><img class="img-fluid" src="..\static\assets\img\candlestick.jpeg" alt="Candlestick"/>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 mb-10">
                         <div class="visuals-item mx-auto" data-toggle="modal" data-target="#visual3">
                             <div class="visuals-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="visuals-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src=".\assets\img\IBM_prediction_graph.png" alt="Line Graph"/>
+                            </div><img class="img-fluid" src="..\static\assets\img\IBM_prediction_graph.png" alt="Line Graph"/>
                         </div>
                     </div>
                 </div>
@@ -131,7 +137,7 @@
                                     <!-- Visual Modal - Title-->
                                     <h2 class="head-space visual-modal-title text-secondary mb-0">Bar Graph</h2>
                                     <!-- Visual Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src=".\assets\img\bar.jpg" alt="Bar Graph"/>
+                                    <img class="img-fluid rounded mb-5" src="..\static\assets\img\bar.jpg" alt="Bar Graph"/>
                                     <!-- Visual Modal - Text-->
                                     <p class="mb-5">Description Here.</p>
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Exit Window</button>
@@ -153,7 +159,7 @@
                                     <!-- Visual Modal - Title-->
                                     <h2 class="head-space visual-modal-title text-secondary mb-0">Candlestick Graph</h2>
                                     <!-- Visual Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src=".\assets\img\candlestick.jpeg" alt="Candlestick"/>
+                                    <img class="img-fluid rounded mb-5" src="..\static\assets\img\candlestick.jpeg" alt="Candlestick"/>
                                     <!-- Visual Modal - Text-->
                                     <p class="mb-5">Description Here.</p>
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Exit Window</button>
@@ -175,7 +181,7 @@
                                     <!-- Visual Modal - Title-->
                                     <h2 class="head-space visual-modal-title text-secondary mb-0">Line Graph</h2>
                                     <!-- Visual Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src=".\assets\img\IBM_prediction_graph.png" alt="Line Graph"/>
+                                    <img class="img-fluid rounded mb-5" src="..\static\assets\img\IBM_prediction_graph.png" alt="Line Graph"/>
                                     <!-- Visual Modal - Text-->
                                     <p class="mb-5">Description Here.</p>
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Exit Window</button>
@@ -197,25 +203,24 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-md-6">
                         <div class="d-flex flex-column align-items-center">
-                            <img width="200" class="" src=".\assets\img\collaboration.png" alt="collab">
-                            <!-- <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div> -->
+                            <img width="200" class="" src="..\static\assets\img\collaboration.png" alt="collab">
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col align-self-center col-md-auto">
+                    <div class="align-self-center col-lg-auto col-md-auto">
                         <p class="pre-wrap lead text-info font-weight-bold">Joseph Miller</p>
                         <div class="text-muted">Contact</div><a class="lead font-weight-bold" target="_blank" href="https://www.linkedin.com/in/joseph-miller-756440168/">LinkedIn</a>
                     </div>
-                    <div class="col align-self-center col-md-auto">
+                    <div class="align-self-center col-lg-auto col-md-auto">
                         <p class="pre-wrap lead text-info font-weight-bold">Criselda Dimacali</p>
                         <div class="text-muted">Contact</div><a class="lead font-weight-bold" target="_blank" href="https://www.linkedin.com/in/criselda-d-b45623105:">LinkedIn</a>
                     </div>
-                    <div class="col align-self-center col-md-auto">
+                    <div class="align-self-center col-lg-auto col-md-auto">
                         <p class="pre-wrap lead text-info font-weight-bold">Kelby Wilson</p>
                         <div class="text-muted">Contact</div><a class="lead font-weight-bold" target="_blank" href="https://www.linkedin.com/in/kelby-wilson/:">LinkedIn</a>
                     </div>
-                    <div class="col align-self-center col-md-auto">
+                    <div class="align-self-center col-lg-auto col-md-auto">
                         <p class="pre-wrap lead text-info font-weight-bold">Nehemiah Dang</p>
                         <div class="text-muted">Contact</div><a class="lead font-weight-bold" target="_blank" href="https://www.linkedin.com/in/nehemiah-dang-24a975197/">LinkedIn</a>
                     </div>
@@ -238,6 +243,6 @@
         <!-- <script src="assets/mail/jqBootstrapValidation.js"></script> -->
         <!-- <script src="assets/mail/contact_me.js"></script> -->
         <!-- JS-->
-        <script src="./js/scripts.js"></script>
+        <script src="static/js/scripts.js"></script>
     </body>
 </html>
