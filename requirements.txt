@@ -10,4 +10,4 @@ MarkupSafe==1.0
 Werkzeug==0.13
 numpy==1.0.0
 pandas==1.0.0
-setuptools==49.6.0
+setuptools==30.0.0
