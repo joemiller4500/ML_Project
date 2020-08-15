@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Stock Market Predictions</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Boot Strap -->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../static/css/styles.css" rel="stylesheet">
+        <!-- Fonts CSS-->
+        <link rel="stylesheet" href="../static/css/heading.css">
+        <link rel="stylesheet" href="../static/css/body.css">
+    </head>
+    <body id="page-top">
+        <!-- bg-seconary = navbar color -->
+        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Stock Prediction</a>
+                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#visuals">Visuals</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contributors">Contributors</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- bg-seconary = header background color -->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="..\static\assets\img\stockmarket.jpg" alt="Stock Pic">
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading mb-0 head-space">Predictive Analysis of Stock Market Trends</h1>
+                <!-- Masthead Subheading-->
+                <!-- <p class="pre-wrap masthead-subheading font-weight-light mb-0"> Joseph Miller - Criselda Dimacali - Kelby Wilson - Nehemiah Dang</p> -->
+            </div>
+        </header>
+        <!-- About Section -->
+        <section class="page-section bg-white text-black mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <div class="text-center">
+                    <h2 class="head-space page-section-heading d-inline-block text-red">About</h2>
+                </div>
+                <!-- About Section Content-->
+                <div class="row justify-content-center">
+                    <div class="d-flex flex-column aligh-self-center d-inline-block">
+                        <img width="400" class="" src="..\static\assets\img\bull-bear.jpg" alt="Bull-Bear">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col align-self-center ml-auto form-check-inline">
+                        <p class="pre-wrap lead title-space">The basis of this project is to see if we are able to create a machine learning model to predict the future for stock market prices. To test what accuracy of the model, we will select a stock within a period of time. From there, train it with all the data, except for the last month and compare the prediction of the last month to the actual.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col align-self-center ml-auto form-check-inline">
+                        <p class="pre-wrap lead title-space">With all this, just how accurate can an AI predict the future stock prices?</p>
+                    </div>
+                </div>
+                <!-- Tools Section-->
+                <div class="text-center">
+                    <h3 class="title-space d-inline-block text-yellow">Tools Used</h3>
+                </div>
+                <div class="row">
+                    <div class="col align-self-center col-md-auto">
+                        <img width="200" class="" src="..\static\assets\img\html-logo.png" alt="html">
+                        <img width="150" class="" src="..\static\assets\img\css-logo.png" alt="css">
+                        <img width="215" class="" src="..\static\assets\img\javascript-logo.png" alt="javascript">
+                        <img width="150" class="" src="..\static\assets\img\bootstrap.png" alt="bootstrap">
+                        <img width="215" class="" src="..\static\assets\img\api.png" alt="api">
+                        <img width="200" class="" src="..\static\assets\img\python-logo.png" alt="python">
+                        <img width="220" class="" src="..\static\assets\img\matplotlib.png" alt="matplotlib">
+                        <img width="220" class="" src="..\static\assets\img\pandas.png" alt="pandas">
+                        <img width="220" class="" src="..\static\assets\img\ml.png" alt="machine-learning">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Visuals Section -->
+        <section class="page-section bg-primary visuals" id="visuals">
+            <div class="container">
+                <!-- Visuals Section Heading-->
+                <div class="text-center">
+                    <h2 class="head-space page-section-heading text-secondary mb-0 d-inline-block">Visuals</h2>
+                </div>
+                <!-- Visuals Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Visuals Items-->
+                    <div class="col-md-6 col-lg-6 mb-5">
+                        <div class="visuals-item mx-auto" data-toggle="modal" data-target="#visual1">
+                            <div class="visuals-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="visuals-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="..\static\assets\img\bar.jpg" alt="Bar Graph"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 mb-5">
+                        <div class="visuals-item mx-auto" data-toggle="modal" data-target="#visual2">
+                            <div class="visuals-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="visuals-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div><img class="img-fluid" src="..\static\assets\img\candlestick.jpeg" alt="Candlestick"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 mb-10">
+                        <div class="visuals-item mx-auto" data-toggle="modal" data-target="#visual3">
+                            <div class="visuals-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="visuals-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div><img class="img-fluid" src="..\static\assets\img\IBM_prediction_graph.png" alt="Line Graph"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Visual Graphs-->
+        <div class="visual-modal modal fade" id="visual1" tabindex="-1" role="dialog" aria-labelledby="#visual1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Visual Modal - Title-->
+                                    <h2 class="head-space visual-modal-title text-secondary mb-0">Bar Graph</h2>
+                                    <!-- Visual Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="..\static\assets\img\bar.jpg" alt="Bar Graph"/>
+                                    <!-- Visual Modal - Text-->
+                                    <p class="mb-5">Description Here.</p>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Exit Window</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="visual-modal modal fade" id="visual2" tabindex="-1" role="dialog" aria-labelledby="#visual2Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Visual Modal - Title-->
+                                    <h2 class="head-space visual-modal-title text-secondary mb-0">Candlestick Graph</h2>
+                                    <!-- Visual Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="..\static\assets\img\candlestick.jpeg" alt="Candlestick"/>
+                                    <!-- Visual Modal - Text-->
+                                    <p class="mb-5">Description Here.</p>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Exit Window</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="visual-modal modal fade" id="visual3" tabindex="-1" role="dialog" aria-labelledby="#visual3Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Visual Modal - Title-->
+                                    <h2 class="head-space visual-modal-title text-secondary mb-0">Line Graph</h2>
+                                    <!-- Visual Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="..\static\assets\img\IBM_prediction_graph.png" alt="Line Graph"/>
+                                    <!-- Visual Modal - Text-->
+                                    <p class="mb-5">Description Here.</p>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Exit Window</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contributors Section -->
+        <section class="page-section" id="contributors">
+            <div class="container">
+                <!-- Contributors Section Heading-->
+                <div class="text-center">
+                    <h2 class="head-space page-section-heading text-info d-inline-block mb-0">Contributors</h2>
+                </div>
+                <!-- Contributors Section Content-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="d-flex flex-column align-items-center">
+                            <img width="200" class="" src="..\static\assets\img\collaboration.png" alt="collab">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="align-self-center col-lg-auto col-md-auto">
+                        <p class="pre-wrap lead text-info font-weight-bold">Joseph Miller</p>
+                        <div class="text-muted">Contact</div><a class="lead font-weight-bold" target="_blank" href="https://www.linkedin.com/in/joseph-miller-756440168/">LinkedIn</a>
+                    </div>
+                    <div class="align-self-center col-lg-auto col-md-auto">
+                        <p class="pre-wrap lead text-info font-weight-bold">Criselda Dimacali</p>
+                        <div class="text-muted">Contact</div><a class="lead font-weight-bold" target="_blank" href="https://www.linkedin.com/in/criselda-d-b45623105:">LinkedIn</a>
+                    </div>
+                    <div class="align-self-center col-lg-auto col-md-auto">
+                        <p class="pre-wrap lead text-info font-weight-bold">Kelby Wilson</p>
+                        <div class="text-muted">Contact</div><a class="lead font-weight-bold" target="_blank" href="https://www.linkedin.com/in/kelby-wilson/:">LinkedIn</a>
+                    </div>
+                    <div class="align-self-center col-lg-auto col-md-auto">
+                        <p class="pre-wrap lead text-info font-weight-bold">Nehemiah Dang</p>
+                        <div class="text-muted">Contact</div><a class="lead font-weight-bold" target="_blank" href="https://www.linkedin.com/in/nehemiah-dang-24a975197/">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Copyright Section-->
+        <section class="copyright py-4 text-center text-white">
+            <div class="container"><small class="pre-wrap">Copyright © UCB BC Final Project Group 3 2020</small></div>
+        </section>
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+        <!-- Bootstrap JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <!-- <script src="assets/mail/jqBootstrapValidation.js"></script> -->
+        <!-- <script src="assets/mail/contact_me.js"></script> -->
+        <!-- JS-->
+        <script src="static/js/scripts.js"></script>
+    </body>
+</html>
