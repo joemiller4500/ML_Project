@@ -1,0 +1,97 @@
+VISUALS SECTION CODE
+--------------------
+<!-- Visuals Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Visuals Items-->
+                    <div class="col align-self-center col-lg-auto col-md-auto">
+                        <div class="visuals-item mx-auto" data-toggle="modal" data-target="#visual1">
+                            <div class="visuals-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="visuals-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="..\static\assets\img\bar.jpg" alt="Bar Graph"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 mb-5">
+                        <div class="visuals-item mx-auto" data-toggle="modal" data-target="#visual2">
+                            <div class="visuals-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="visuals-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div><img class="img-fluid" src="..\static\assets\img\candlestick.jpeg" alt="Candlestick"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 mb-10">
+                        <div class="visuals-item mx-auto" data-toggle="modal" data-target="#visual3">
+                            <div class="visuals-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="visuals-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div><img class="img-fluid" src="..\static\assets\img\IBM_prediction_graph.png" alt="Line Graph"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Visual Graphs-->
+        <div class="visual-modal modal fade" id="visual1" tabindex="-1" role="dialog" aria-labelledby="#visual1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Visual Modal - Title-->
+                                    <h2 class="head-space visual-modal-title text-secondary mb-0">Bar Graph</h2>
+                                    <!-- Visual Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="..\static\assets\img\bar.jpg" alt="Bar Graph"/>
+                                    <!-- Visual Modal - Text-->
+                                    <p class="mb-5">Description Here.</p>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Exit Window</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="visual-modal modal fade" id="visual2" tabindex="-1" role="dialog" aria-labelledby="#visual2Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Visual Modal - Title-->
+                                    <h2 class="head-space visual-modal-title text-secondary mb-0">Candlestick Graph</h2>
+                                    <!-- Visual Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="..\static\assets\img\candlestick.jpeg" alt="Candlestick"/>
+                                    <!-- Visual Modal - Text-->
+                                    <p class="mb-5">Description Here.</p>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Exit Window</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="visual-modal modal fade" id="visual3" tabindex="-1" role="dialog" aria-labelledby="#visual3Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Visual Modal - Title-->
+                                    <h2 class="head-space visual-modal-title text-secondary mb-0">Line Graph</h2>
+                                    <!-- Visual Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="..\static\assets\img\IBM_prediction_graph.png" alt="Line Graph"/>
+                                    <!-- Visual Modal - Text-->
+                                    <p class="mb-5">Description Here.</p>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Exit Window</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
