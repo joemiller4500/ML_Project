@@ -7454,3 +7454,49 @@ form .row:first-child .floating-label-form-group {
   left: -2000px;
   z-index: -1;
 }
+
+.y-axis line {
+  opacity:.2;
+}
+.y-axis path {
+  display:none;
+}
+.line {
+  fill: none;
+  stroke-width: 3px;
+  opacity: 0.9;
+}
+
+.legend rect {
+  fill: white;
+  stroke: black;
+  opacity: 0.8;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+.lineHoverText {
+  text-shadow:
+  -2px -2px 0 #fff,
+  2px -2px 0 #fff,
+  -2px 2px 0 #fff,
+  2px 2px 0 #fff;
+}
+.hoverCircle {
+  stroke: black;
+  opacity: 2;
+}
+#selectbox {
+  display: none;
+}
+#chart {
+  padding-left: 50px;
+}
+.box{
+  color: #fff;
+  padding: 20px;
+  display: none;
+  margin-top: 20px;
+}
