@@ -1,0 +1,33 @@
+DEPLOY THROUGH TERMINAL
+-----------------------
+Open the directory in the master, that you want to create the app
+-cd [nameOfDirectory]
+
+Create the Heroku app in the master
+-heroku create
+
+Check for available remotes
+-git remote -v
+
+Push the heroku to the master
+-git push heroku master
+
+
+Open the heroku app
+-heroku open
+
+If you want to commit changes to the website
+-git add .
+-git commit -m "Message"
+-git push heroku master
+
+DEPLOY THROUGH WEBSITE
+----------------------
+go to heroku.com
+Connect to Github
+Search for the repo you want to connect and connect it
+Under "Manual deploy", click "Deploy Branch" with the master branch
+After it's deployed, click "View" for the app
+
+If you want it to update to any changes,
+-Under "Automatic deploys", click Automatic Deploys
