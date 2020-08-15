@@ -5,17 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Stock Market Predictions</title>
         <!-- Font Awesome icons (free version)-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script> -->
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../static/css/styles.css" rel="stylesheet">
         <!-- Fonts CSS-->
         <link rel="stylesheet" href="../static/css/heading.css">
         <link rel="stylesheet" href="../static/css/body.css">
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script>
             $(document).ready(function(){
-                $("select").change(function(){
+            //$(".stock-graph").ready(function(){
+                $(".select-graph").change(function(){
                     $(this).find("option:selected").each(function(){
                         var optionValue = $(this).attr("value");
                         if(optionValue){
@@ -152,32 +156,35 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col align-self-center col-lg-auto col-md-auto">
-                        <select>
-                            <option value="apple">Apple</option>
-                            <option value="disney">Disney</option>
-                            <option value="ge">General Electric</option>
-                            <option value="google">Google</option>
-                            <option value="ibm">IBM</option>
-                            <option value="jpm">JP Morgan</option>
-                            <option value="stbx">Starbucks</option>
-                            <option value="tgt">Target</option>
-                            <option value="ual">United Airlines</option>
-                        </select>
+                    <div class="container stock-graph">
+                        <div class="col align-self-center col-lg-auto col-md-auto">
+                            <select class="select-graph">
+                                <option value="apple">Apple</option>
+                                <option value="disney">Disney</option>
+                                <option value="ge">General Electric</option>
+                                <option value="google">Google</option>
+                                <option value="ibm">IBM</option>
+                                <option value="jpm">JP Morgan</option>
+                                <option value="stbx">Starbucks</option>
+                                <option value="tgt">Target</option>
+                                <option value="ual">United Airlines</option>
+                            </select>
+                        </div>
+                        <div class="apple box"><img src="..\static\assets\img\AAPL_predictions.png"></div>
+                        <div class="disney box"><img src="..\static\assets\img\DIS_predictions.png"></div>
+                        <div class="ge box"><img src="..\static\assets\img\GE_predictions.png"></div>
+                        <div class="google box"><img src="..\static\assets\img\GOOG_predictions.png"></div>
+                        <div class="ibm box"><img src="..\static\assets\img\IBM_predictions.png"></div>
+                        <div class="jpm box"><img src="..\static\assets\img\JPM_predictions.png"></div>
+                        <div class="stbx box"><img src="..\static\assets\img\SBUX_predictions.png"></div>
+                        <div class="tgt box"><img src="..\static\assets\img\TGT_predictions.png"></div>
+                        <div class="ual box"><img src="..\static\assets\img\UAL_predictions.png"></div>
                     </div>
-                    <div class="apple box"><img src="..\static\assets\img\AAPL_predictions.png"></div>
-                    <div class="disney box"><img src="..\static\assets\img\DIS_predictions.png"></div>
-                    <div class="ge box"><img src="..\static\assets\img\GE_predictions.png"></div>
-                    <div class="google box"><img src="..\static\assets\img\GOOG_predictions.png"></div>
-                    <div class="ibm box"><img src="..\static\assets\img\IBM_predictions.png"></div>
-                    <div class="jpm box"><img src="..\static\assets\img\JPM_predictions.png"></div>
-                    <div class="stbx box"><img src="..\static\assets\img\SBUX_predictions.png"></div>
-                    <div class="tgt box"><img src="..\static\assets\img\TGT_predictions.png"></div>
-                    <div class="ual box"><img src="..\static\assets\img\UAL_predictions.png"></div>
-
-                    <div class="col align-self-center col-lg-auto col-md-auto">
-                        <div class="d-flex flex-column aligh-self-center d-inline-block">
-                            <img width="400" class="" src="..\static\assets\img\stock-chart.png" alt="stock-chart">
+                    <div class="row justify-content-center">
+                        <div class="col align-self-center col-lg-auto col-md-auto">
+                            <div class="d-flex flex-column aligh-self-center d-inline-block">
+                                <img width="400" class="" src="..\static\assets\img\stock-chart.png" alt="stock-chart">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -249,13 +256,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <!-- D3 -->
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <!-- JS-->
         <script src="static/js/scripts.js"></script>
-        <!-- <script src="../static/js/graphs.js"></script> -->
     </body>
     <script>
         d3.csv("../static/assets/prediction_table.csv").then(d => chart(d))
