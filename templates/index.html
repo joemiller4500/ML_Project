@@ -11,6 +11,23 @@
         <!-- Fonts CSS-->
         <link rel="stylesheet" href="../static/css/heading.css">
         <link rel="stylesheet" href="../static/css/body.css">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("select").change(function(){
+                    $(this).find("option:selected").each(function(){
+                        var optionValue = $(this).attr("value");
+                        if(optionValue){
+                            $(".box").not("." + optionValue).hide();
+                            $("." + optionValue).show();
+                        } else{
+                            $(".box").hide();
+                        }
+                    });
+                }).change();
+            });
+        </script>
         <style>
             .y-axis line {
                 opacity:.2;
@@ -47,6 +64,15 @@
             }
             #selectbox {
                 display: none;
+            }
+            #chart {
+                padding-left: 100px;
+            }
+            .box{
+                color: #fff;
+                padding: 20px;
+                display: none;
+                margin-top: 20px;
             }
         </style>
     </head>
@@ -122,7 +148,33 @@
                         <div class="text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                         <select id="selectbox"></select>
                         <h1 class="text-secondary">Open Stocks Prediction Over Time (2020)</h1>
-                        <svg id="chart" width="1000" height="700"></svg>
+                        <svg id="chart" width="600" height="400"></svg>
+
+                        <div class="col align-self-center col-lg-auto col-md-auto">
+                            <select>
+                                <option value="apple">Apple</option>
+                                <option value="disney">Disney</option>
+                                <option value="ge">General Electric</option>
+                                <option value="google">Google</option>
+                                <option value="ibm">IBM</option>
+                                <option value="jpm">JP Morgan</option>
+                                <option value="stbx">Starbucks</option>
+                                <option value="tgt">Target</option>
+                                <option value="ual">United Airlines</option>
+                            </select>
+                        </div>
+                        <div class="apple box"><img src="..\static\assets\img\AAPL_predictions.png"></div>
+                        <div class="disney box"><img src="..\static\assets\img\DIS_predictions.png"></div>
+                        <div class="ge box"><img src="..\static\assets\img\GE_predictions.png"></div>
+                        <div class="ibm box"><img src="..\static\assets\img\IBM_predictions.png"></div>
+                        <div class="jpm box"><img src="..\static\assets\img\JPM_predictions.png"></div>
+                        <div class="stbx box"><img src="..\static\assets\img\SBUX_predictions.png"></div>
+                        <div class="tgt box"><img src="..\static\assets\img\TGT_predictions.png"></div>
+                        <div class="ual box"><img src="..\static\assets\img\UAL_predictions.png"></div>
+                        <div class="google box"><img src="..\static\assets\img\GOOG_predictions.png"></div>
+                    </div>
+                    <div class="col align-self-center col-lg-auto col-md-auto">
+                        
                     </div>
                 </div>
             </div>
@@ -193,6 +245,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <!-- D3 -->
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <!-- JS-->
