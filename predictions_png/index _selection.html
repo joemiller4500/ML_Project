@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Show Hide Elements Using Select Box</title>
+<style>
+    .box{
+        color: #fff;
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+    }
+
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
+</head>
+<body>
+    <div>
+        <select>
+            <option value="apple">Apple</option>
+            <option value="disney">Disney</option>
+            <option value="ge">General Electric</option>
+            <option value="google">Google</option>
+            <option value="ibm">IBM</option>
+            <option value="jpm">JP Morgan</option>
+            <option value="stbx">Starbucks</option>
+            <option value="tgt">Target</option>
+            <option value="ual">United Airlines</option>
+        </select>
+    </div>
+    <div class="apple box"><img src="AAPL_predictions.png"></div>
+    <div class="disney box"><img src="DIS_predictions.png"></div>
+    <div class="ge box"><img src="GE_predictions.png"></div>
+    <div class="ibm box"><img src="IBM_predictions.png"></div>
+    <div class="jpm box"><img src="JPM_predictions.png"></div>
+    <div class="stbx box"><img src="SBUX_predictions.png"></div>
+    <div class="tgt box"><img src="TGT_predictions.png"></div>
+    <div class="ual box"><img src="UAL_predictions.png"></div>
+    <div class="google box"><img src="GOOG_predictions.png"></div>
+    
+</body>
+</html>
