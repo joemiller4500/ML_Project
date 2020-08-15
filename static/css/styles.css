@@ -7437,7 +7437,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 .dotted {
-  border-top: 1px dotted #16335f;
+  border-top: 10px dotted #16335f;
 }
 
 .bg-fill {
