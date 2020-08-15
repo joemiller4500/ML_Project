@@ -8,6 +8,8 @@
         <title>Stock Market Predictions</title>
         <!-- Font Awesome icons (free version)-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- D3 -->
+        <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
         <!-- Boot Strap -->
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -15,8 +17,44 @@
         <!-- Fonts CSS-->
         <link rel="stylesheet" href="../static/css/heading.css">
         <link rel="stylesheet" href="../static/css/body.css">
+        <style>
+            .y-axis line {
+                opacity:.2;
+            }
+            .y-axis path {
+                display:none;
+            }
+            .line {
+                fill: none;
+                stroke-width: 3px;
+                opacity: 0.9;
+            }
+            
+            .legend rect {
+                fill: white;
+                stroke: black;
+                opacity: 0.8;
+            }
+            
+            .overlay {
+                fill: none;
+                pointer-events: all;
+            }
+            .lineHoverText {
+                text-shadow:
+                -2px -2px 0 #fff,
+                2px -2px 0 #fff,
+                -2px 2px 0 #fff,
+                2px 2px 0 #fff;
+            }
+            .hoverCircle {
+                stroke: black;
+                opacity: 2;
+            }
+        </style>
     </head>
     <body id="page-top">
+        <!-- Nav-Bar -->
         <!-- bg-seconary = navbar color -->
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
             <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Stock Prediction</a>
@@ -45,7 +83,7 @@
             </div>
         </header>
         <!-- About Section -->
-        <section class="page-section bg-white text-black mb-0" id="about">
+        <section class="page-section bg-secondary text-red mb-0" id="about">
             <div class="container">
                 <!-- About Section Heading-->
                 <div class="text-center">
@@ -67,139 +105,42 @@
                         <p class="pre-wrap lead title-space">With all this, just how accurate can an AI predict the future stock prices?</p>
                     </div>
                 </div>
-                <!-- Tools Section-->
-                <div class="text-center">
-                    <h3 class="title-space d-inline-block text-yellow">Tools Used</h3>
-                </div>
-                <div class="row">
-                    <div class="col align-self-center col-md-auto">
-                        <img width="200" class="" src="..\static\assets\img\html-logo.png" alt="html">
-                        <img width="150" class="" src="..\static\assets\img\css-logo.png" alt="css">
-                        <img width="215" class="" src="..\static\assets\img\javascript-logo.png" alt="javascript">
-                        <img width="150" class="" src="..\static\assets\img\bootstrap.png" alt="bootstrap">
-                        <img width="215" class="" src="..\static\assets\img\api.png" alt="api">
-                        <img width="200" class="" src="..\static\assets\img\python-logo.png" alt="python">
-                        <img width="220" class="" src="..\static\assets\img\matplotlib.png" alt="matplotlib">
-                        <img width="220" class="" src="..\static\assets\img\pandas.png" alt="pandas">
-                        <img width="220" class="" src="..\static\assets\img\ml.png" alt="machine-learning">
-                    </div>
-                </div>
             </div>
         </section>
         <!-- Visuals Section -->
-        <section class="page-section bg-primary visuals" id="visuals">
+        <section class="page-section bg-white visuals" id="visuals">
             <div class="container">
                 <!-- Visuals Section Heading-->
                 <div class="text-center">
                     <h2 class="head-space page-section-heading text-secondary mb-0 d-inline-block">Visuals</h2>
+                    <hr class="dotted">
                 </div>
                 <!-- Visuals Grid Items-->
                 <div class="row justify-content-center">
                     <!-- Visuals Items-->
-                    <div class="col-md-6 col-lg-6 mb-5">
-                        <div class="visuals-item mx-auto" data-toggle="modal" data-target="#visual1">
-                            <div class="visuals-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="visuals-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="..\static\assets\img\bar.jpg" alt="Bar Graph"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 mb-5">
-                        <div class="visuals-item mx-auto" data-toggle="modal" data-target="#visual2">
-                            <div class="visuals-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="visuals-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src="..\static\assets\img\candlestick.jpeg" alt="Candlestick"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 mb-10">
-                        <div class="visuals-item mx-auto" data-toggle="modal" data-target="#visual3">
-                            <div class="visuals-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="visuals-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src="..\static\assets\img\IBM_prediction_graph.png" alt="Line Graph"/>
-                        </div>
+                    <div class="col align-self-center col-lg-auto col-md-auto">
+                        <div class="text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        <select id="selectbox"></select>
+                        <!-- <div id="selectbox"></div> -->
+                        <h1 class="text-secondary">Stocks Prediction Over Time</h1>
+                        <svg id="chart" width="1000" height="700"></svg>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Visual Graphs-->
-        <div class="visual-modal modal fade" id="visual1" tabindex="-1" role="dialog" aria-labelledby="#visual1Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Visual Modal - Title-->
-                                    <h2 class="head-space visual-modal-title text-secondary mb-0">Bar Graph</h2>
-                                    <!-- Visual Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="..\static\assets\img\bar.jpg" alt="Bar Graph"/>
-                                    <!-- Visual Modal - Text-->
-                                    <p class="mb-5">Description Here.</p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Exit Window</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="visual-modal modal fade" id="visual2" tabindex="-1" role="dialog" aria-labelledby="#visual2Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Visual Modal - Title-->
-                                    <h2 class="head-space visual-modal-title text-secondary mb-0">Candlestick Graph</h2>
-                                    <!-- Visual Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="..\static\assets\img\candlestick.jpeg" alt="Candlestick"/>
-                                    <!-- Visual Modal - Text-->
-                                    <p class="mb-5">Description Here.</p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Exit Window</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="visual-modal modal fade" id="visual3" tabindex="-1" role="dialog" aria-labelledby="#visual3Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Visual Modal - Title-->
-                                    <h2 class="head-space visual-modal-title text-secondary mb-0">Line Graph</h2>
-                                    <!-- Visual Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="..\static\assets\img\IBM_prediction_graph.png" alt="Line Graph"/>
-                                    <!-- Visual Modal - Text-->
-                                    <p class="mb-5">Description Here.</p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Exit Window</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Contributors Section -->
         <section class="page-section" id="contributors">
             <div class="container">
                 <!-- Contributors Section Heading-->
                 <div class="text-center">
                     <h2 class="head-space page-section-heading text-info d-inline-block mb-0">Contributors</h2>
+                    <hr class="dotted">
                 </div>
                 <!-- Contributors Section Content-->
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-md-6">
                         <div class="d-flex flex-column align-items-center">
-                            <img width="200" class="" src="..\static\assets\img\collaboration.png" alt="collab">
+                            <img style="margin: 100px" width="200" class="" src="..\static\assets\img\collaboration.png" alt="collab">
                         </div>
                     </div>
                 </div>
@@ -221,6 +162,24 @@
                         <div class="text-muted">Contact</div><a class="lead font-weight-bold" target="_blank" href="https://www.linkedin.com/in/nehemiah-dang-24a975197/">LinkedIn</a>
                     </div>
                 </div>
+                <!-- Tools Section-->
+                <div class="text-center">
+                    <h3 class="title-space d-inline-block text-yellow">Tools Used</h3>
+                    <hr class="dotted">
+                </div>
+                <div class="row">
+                    <div class="col align-self-center col-md-auto">
+                        <img width="100" class="" src="..\static\assets\img\html-logo.png" alt="html">
+                        <img width="75" class="" src="..\static\assets\img\css-logo.png" alt="css">
+                        <img width="110" class="" src="..\static\assets\img\javascript-logo.png" alt="javascript">
+                        <img width="75" class="" src="..\static\assets\img\bootstrap.png" alt="bootstrap">
+                        <img width="110" class="" src="..\static\assets\img\api.png" alt="api">
+                        <img width="100" class="" src="..\static\assets\img\python-logo.png" alt="python">
+                        <img width="110" class="" src="..\static\assets\img\matplotlib.png" alt="matplotlib">
+                        <img width="110" class="" src="..\static\assets\img\pandas.png" alt="pandas">
+                        <img width="110" class="" src="..\static\assets\img\ml.png" alt="machine-learning">
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -235,10 +194,182 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <!-- <script src="assets/mail/jqBootstrapValidation.js"></script> -->
-        <!-- <script src="assets/mail/contact_me.js"></script> -->
+        <!-- D3 -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
         <!-- JS-->
         <script src="static/js/scripts.js"></script>
+        <!-- <script src="../static/js/graphs.js"></script> -->
     </body>
+    <script>
+        d3.csv("../static/assets/test.csv").then(d => chart(d))
+
+        function chart(data) {
+
+        var keys = data.columns.slice(1);
+
+        var parseTime = d3.timeParse("%d-%b-%Y"),
+            formatDate = d3.timeFormat("%m-%d"),
+            bisectDate = d3.bisector(d => d.Date).left;
+            formatValue = d3.format("");
+
+        data.forEach(function(d) {
+            d.Date = parseTime(d.Date);
+            return d;
+        })
+
+        var svg = d3.select("#chart"),
+            margin = {top: 15, right: 35, bottom: 15, left: 35},
+            width = +svg.attr("width") - margin.left - margin.right,
+            height = +svg.attr("height") - margin.top - margin.bottom;
+
+        var x = d3.scaleTime()
+            .rangeRound([margin.left, width - margin.right])
+            .domain(d3.extent(data, d => d.Date))
+
+        var y = d3.scaleLinear()
+            .rangeRound([height - margin.bottom, margin.top]);
+
+        var z = d3.scaleOrdinal(d3.schemeCategory10);
+
+        var line = d3.line()
+            .curve(d3.curveCardinal)
+            .x(d => x(d.Date))
+            .y(d => y(d.stocks));
+
+        svg.append("g")
+            .attr("class","x-axis")
+            .attr("transform", "translate(0," + (height - margin.bottom) + ")")
+            .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%b")));
+
+        svg.append("g")
+            .attr("class", "y-axis")
+            .attr("transform", "translate(" + margin.left + ",0)");
+
+        var focus = svg.append("g")
+            .attr("class", "focus")
+            .style("display", "none");
+
+        focus.append("line").attr("class", "lineHover")
+            .style("stroke", "#999")
+            .attr("stroke-width", 1)
+            .style("shape-rendering", "crispEdges")
+            .style("opacity", 0.5)
+            .attr("y1", -height)
+            .attr("y2",0);
+
+        focus.append("text").attr("class", "lineHoverDate")
+            .attr("text-anchor", "middle")
+            .attr("font-size", 15);
+
+        var overlay = svg.append("rect")
+            .attr("class", "overlay")
+            .attr("x", margin.left)
+            .attr("width", width - margin.right - margin.left)
+            .attr("height", height)
+
+        upDate(d3.select('#selectbox').property('value'), 0);
+
+        function upDate(input, speed) {
+
+            var copy = keys.filter(f => f.includes(input))
+
+            var companies = copy.map(function(id) {
+                return {
+                    id: id,
+                    values: data.map(d => {return {Date: d.Date, stocks: +d[id]}})
+                };
+            });
+
+            y.domain([
+                d3.min(companies, d => d3.min(d.values, c => c.stocks)),
+                d3.max(companies, d => d3.max(d.values, c => c.stocks))
+            ]).nice();
+
+            svg.selectAll(".y-axis").transition()
+                .duration(speed)
+                .call(d3.axisLeft(y).tickSize(-width + margin.right + margin.left))
+
+            var comp = svg.selectAll(".companies")
+                .data(companies);
+
+            comp.exit().remove();
+
+            comp.enter().insert("g", ".focus").append("path")
+                .attr("class", "line companies")
+                .style("stroke", d => z(d.id))
+                .merge(comp)
+            .transition().duration(speed)
+                .attr("d", d => line(d.values))
+
+            tooltip(copy);
+        }
+
+        function tooltip(copy) {
+            
+            var labels = focus.selectAll(".lineHoverText")
+                .data(copy)
+
+            labels.enter().append("text")
+                .attr("class", "lineHoverText")
+                .style("fill", d => z(d))
+                .attr("text-anchor", "start")
+                .attr("font-size",14)
+                .attr("dy", (_, i) => 1 + i * 2 + "em")
+                .merge(labels);
+
+            var circles = focus.selectAll(".hoverCircle")
+                .data(copy)
+
+            circles.enter().append("circle")
+                .attr("class", "hoverCircle")
+                .style("fill", d => z(d))
+                .attr("r", 2.5)
+                .merge(circles);
+
+            svg.selectAll(".overlay")
+                .on("mouseover", function() { focus.style("display", null); })
+                .on("mouseout", function() { focus.style("display", "none"); })
+                .on("mousemove", mousemove);
+
+            function mousemove() {
+
+                var x0 = x.invert(d3.mouse(this)[0]),
+                    i = bisectDate(data, x0, 1),
+                    d0 = data[i - 1],
+                    d1 = data[i],
+                    d = x0 - d0.Date > d1.Date - x0 ? d1 : d0;
+
+                focus.select(".lineHover")
+                    .attr("transform", "translate(" + x(d.Date) + "," + height + ")");
+
+                focus.select(".lineHoverDate")
+                    .attr("transform", 
+                        "translate(" + x(d.Date) + "," + (height + margin.bottom) + ")")
+                    .text(formatDate(d.Date));
+
+                focus.selectAll(".hoverCircle")
+                    .attr("cy", e => y(d[e]))
+                    .attr("cx", x(d.Date));
+
+                focus.selectAll(".lineHoverText")
+                    .attr("transform", 
+                        "translate(" + (x(d.Date)) + "," + height / 2.5 + ")")
+                    .text(e => e + " " + "º" + formatValue(d[e]));
+
+                x(d.Date) > (width - width / 4) 
+                    ? focus.selectAll("text.lineHoverText")
+                        .attr("text-anchor", "end")
+                        .attr("dx", -10)
+                    : focus.selectAll("text.lineHoverText")
+                        .attr("text-anchor", "start")
+                        .attr("dx", 10)
+            }
+        }
+
+        var selectbox = d3.select("#selectbox")
+            .on("change", function() {
+                upDate(this.value, 750);
+            })
+    }
+    </script>
 </html>

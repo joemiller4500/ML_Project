@@ -9,5 +9,9 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+# @app.route("/graph")
+# def graph():
+#     return render_template("index4.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
